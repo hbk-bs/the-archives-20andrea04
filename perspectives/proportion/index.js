@@ -1,33 +1,21 @@
 function setup() {
+	colorMode(HSL, 360, 100, 100, 100);
 	createCanvas(400, 400);
+	noStroke();
+	const side = 40;
 
-	background("DarkSalmon");
+	for (let x = 0; x < width; x += side) {
+		for (let y = 0; y < height; y += side) {
+			fill(random(240, 320), random(50, 80), random(40, 70)); // wählt zufälligen Farbton (Hue), Sättigung und Helligkeit festlegen
+			rect(x, y, side, side); // Zeichnet ein Quadrat
+		}
+	}
+	fill(260, 70, 40); // Farbe für das große Quadrat
+	rect(100, 100, side * 3, side * 3);
 
-	fill("Bisque");
-	ellipse(200, 200, 270, 300);
-
-	fill("White");
-	ellipse(150, 200, 70, 40);
-	fill("LightBlue");
-	ellipse(150, 200, 40, 40);
-	fill("Black");
-	ellipse(150, 200, 20, 20);
-
-	fill("White");
-	ellipse(300, 210, 150, 100);
-	fill("LightBlue");
-	ellipse(300, 210, 100, 100);
-	fill("Black");
-	ellipse(300, 210, 50, 50);
-
-	fill("Bisque");
-	triangle(200, 200, 215, 250, 185, 250);
-
-	stroke("LightCoral");
-	strokeWeight(5);
-
-	line(150, 300, 250, 300);
+	saveCanvas("mysketch", "png");
 }
+
 
 
 
