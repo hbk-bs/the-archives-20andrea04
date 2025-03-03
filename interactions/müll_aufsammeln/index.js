@@ -1,54 +1,87 @@
-let ball1X; // Position der ersten Kugel (von links nach rechts)
-let ball2X; // Position der zweiten Kugel (von rechts nach links)
-let ballY1; // Y-Position der ersten Kugel (grün)
-let ballY2; // Y-Position der zweiten Kugel (pink)
-let ballSize = 50; // Größe der Kugeln
-let target1; //Zielposition Kugel 1
-let target2; //Zielposition Kugel 2
+let rectX, rectY; // Position des Rechtecks
+let rectSize = 100; // Größe des Rechtecks
+let fallingObjects = []; // Array für die fallenden Objekte
+let objectSize = 50; // Größe der fallenden Objekte
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(600, 600); // Zeichenfläche erstellen
 
-  // Start- und Zielpositionen der Kugeln
-  ball1X = 0; 
-  target1 = width;
+  // Rechteck-Startposition
+  rectX = width / 2 - rectSize / 2;
+  rectY = height - rectSize;
 
-  ball2X = width;
-  target2 = 0;
-
-  ballY1 = height / 3; // Y-Position der grünen Kugel (etwas höher als die pinke)
-  ballY2 = height / 2; // Y-Position der pinken Kugel (in der Mitte des Canvas)
+  // Initiale fallende Objekte hinzufügen
+  for (let i = 0; i < 5; i++) {
+    addFallingObject();
+  }
 }
 
 function draw() {
-  background(255);
-  
-  // Berechnung easing für beide Kugeln
-  let easeFactor1 = 0.05; //Geschmeidigkeit
-  ball1X += (target1 - ball1X) * easeFactor1;//Langsames Annähern an Ziel
+  background("lightblue");
 
-  let easeFactor2 = 0.05;
-  ball2X += (target2 - ball2X)* easeFactor2; 
+  // Rechteck zeichnen
+  fill("red")
+  rect(rectX, rectY, rectSize, rectSize);
 
+  // Fallende Objekte aktualisieren und zeichnen
+  fill("green")
+  for (let i = fallingObjects.length - 1; i >= 0; i--) {
+    let obj = fallingObjects[i];
+    obj.y += obj.speed; // Objekt fällt nach unten
 
-//Sobald Ziel erreicht, wechseln Kugeln Richtung
-  if (abs(ball1X - target1) < 1) {
-    target1 = target1 === width ? 0 : width;
+    // Zeichne das Objekt (geometrische Formen variieren)
+    if (obj.type === "circle") {
+      ellipse(obj.x, obj.y, objectSize);
+    } else if (obj.type === "rect") {
+      rect(obj.x, obj.y, objectSize, objectSize);
+    } else if (obj.type === "triangle") {
+      triangle(
+        obj.x - objectSize / 2,
+        obj.y + objectSize / 2,
+        obj.x + objectSize / 2,
+        obj.y + objectSize / 2,
+        obj.x,
+        obj.y - objectSize / 2
+      );
+    }
+
+    // Kollisionserkennung
+    if (
+      obj.x > rectX &&
+      obj.x < rectX + rectSize &&
+      obj.y + objectSize / 2 > rectY &&
+      obj.y - objectSize / 2 < rectY + rectSize
+    ) {
+      fallingObjects.splice(i, 1); // Objekt entfernen
+    }
+
+    // Objekt entfernen, wenn es aus dem Canvas fällt
+    if (obj.y > height) {
+      fallingObjects.splice(i, 1);
+    }
   }
 
-  if (abs(ball2X - target2) < 1) {
-    target2 = target2 === 0 ? width : 0;
+  // Neue Objekte hinzufügen, wenn wenige übrig sind
+  if (fallingObjects.length < 5) {
+    addFallingObject();
   }
-  // Zeichnen der ersten Kugel (grün, etwas höher)
-  fill(0, 255, 0); // Grün
-  noStroke();
-  ellipse(ball1X, ballY1, ballSize, ballSize);
-
-  // Zeichnen der zweiten Kugel (pink)
-  fill(255, 0, 255); // Pink
-  noStroke();
-  ellipse(ball2X, ballY2, ballSize, ballSize);
 }
 
+function mouseDragged() {
+  // Rechteckposition aktualisieren
+  rectX = mouseX - rectSize / 2;
+  rectY = mouseY - rectSize / 2;
+}
+
+// Funktion, um ein neues fallendes Objekt zu erzeugen
+function addFallingObject() {
+  let obj = {
+    x: random(objectSize / 2, width - objectSize / 2), // Zufällige X-Position
+    y: -objectSize, // Start knapp außerhalb des oberen Canvas-Rands
+    speed: random(2, 5), // Zufällige Geschwindigkeit
+    type: random(["circle", "rect", "triangle"]) // Zufällige Form
+  };
+  fallingObjects.push(obj);
+}
 
  
