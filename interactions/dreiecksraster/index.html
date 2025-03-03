@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5.js Starter Project</title>
+    <style>
+   body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+.top-buttons,
+.bottom-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+#p5-container {
+  display: block;
+  position: relative;
+}
+
+.left-buttons,
+.right-buttons {
+  display: grid;
+  grid-template-rows: repeat (10, 1fr);
+  gap: 5px;
+}
+
+.left-buttons button,
+.right-buttons button {
+  align-self: center;
+  justify-self: center;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+header {
+  width: 100%;
+  padding: 20px 20px 20px 40px;
+}
+header h1 {
+  margin: 0;
+  font-size: 40px;
+  text-align: left;
+}
+header p {
+  margin: 5px 0 0 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+#screenshot-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#screenshot-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#screenshot-button:hover {
+  background-color: #45a049;
+}
+
+    </style>
+</head>
+
+<body>
+
+        <script src="../modules/p5/lib/p5.min.js"></script>
+        <script src="index.js"></script>
+
+        <header>
+            <h1> Dreiecksraster </h1>
+            <p> Verschiebe die Zeilen und Spalten des Rasters, um verschiedene Muster zu kreieren! </p>
+        </header>
+
+        <!-- Top Buttons -->
+        <div class="top-buttons">
+            <script>
+                for (let i = 0; i < 10; i++) {
+                    document.write(`<button onclick="shiftCol(${i}, 'up')">&uarr;</button>`);
+                }
+            </script>
+        </div>
+
+        <!-- Main Container -->
+        <div class="container">
+            <!-- Buttons links der Reihen -->
+            <div class="left-buttons">
+                <script>
+                    for (let i = 0; i < 10; i++) {
+                        document.write(`<button onclick="shiftRow(${i}, 'left')">&larr;</button>`);
+                    }
+                </script>
+            </div>
+
+            <!-- P5 Canvas -->
+            <div id="p5-container"></div>
+
+            <!-- Buttons rechts der Reihen -->
+            <div class="right-buttons">
+                <script>
+                    for (let i = 0; i < 10; i++) {
+                        document.write(`<button onclick="shiftRow(${i}, 'right')">&rarr;</button>`);
+                    }
+                </script>
+            </div>
+        </div>
+
+        <!-- Bottom Buttons -->
+        <div class="bottom-buttons">
+            <script>
+                for (let i = 0; i < 10; i++) {
+                    document.write(`<button onclick="shiftCol(${i}, 'down')">&darr;</button>`);
+                }
+            </script>
+        </div>
+
+        <script src="script.js"></script>
+
+
+<div id="screenshot-container">
+    <button id="screenshot-button">Screenshot speichern</button>
+</div>
+</body>
+
+</html>
