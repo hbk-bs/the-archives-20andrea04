@@ -1,8 +1,8 @@
 body {
-	height: 100dvh;
-	width: 100dvw;
+	
 	margin: 0 auto;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
@@ -10,4 +10,38 @@ body {
 img {
 	max-width: 100%;
 	height: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap; /* Sorgt dafür, dass Bilder in die nächste Zeile rutschen */
+    justify-content: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: auto;
+	margin-bottom: 20px;
+}
+
+.image-container img {
+    width: calc(33.33% - 10px); /* Teilt den Platz auf 3 Bilder pro Reihe */
+    max-width: 180px;
+    height: auto;
+}
+
+.videos-container {
+    display: flex; /* Flexbox für die Videos */
+    justify-content: center; /* Zentriert die Videos horizontal */
+    gap: 20px; /* Abstand zwischen den Videos */
+}
+
+.video {
+    width: 300px; /* Breite der Videos */
+    height: auto;
 }
