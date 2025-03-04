@@ -38,10 +38,10 @@ img {
 .videos-container {
     display: flex; /* Flexbox für die Videos */
     justify-content: center; /* Zentriert die Videos horizontal */
-    gap: 20px; /* Abstand zwischen den Videos */
+    gap: 10px; /* Abstand zwischen den Videos */
 }
 
 .video {
-    width: 300px; /* Breite der Videos */
+    width: 100px; /* Breite der Videos */
     height: auto;
 }
