@@ -1,83 +1,29 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Zentriert die Elemente horizontal */
+    justify-content: center; /* Zentriert die Inhalte vertikal */
+    min-height: 100vh; /* Nimmt die volle Höhe des Bildschirms */
+    margin: 0;
+    text-align: center; /* Zentriert den Text */
+}
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-	font-weight: normal;
-  }
-  
-  img,
-  video {
-	display: linear;
-	max-width: 25%;
-	height: auto;
-  }
-  
-  ul,
-  ol {
-	list-style: none;
-  }
-  
-  blockquote {
-	margin: 0;
-	padding: 0;
-  }
-  
-  a {
-	text-decoration: none;
-  }
-  
-  /*base*/
-  
-  html {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 100%;
-	font-weight: normal;
-	text-align: left;
-  }
-  
-  body {
-	color: deeppink;
-	background-color: lightblue;
-  }
-  
-  h1 {
-	font-size: 2em;
-	color: purple;
-  }
-  
-  h2 {
-	font-size: 1.6em;
-	color: teal;
-  }
-  
-  a {
-	text-decoration: none;
-  }
-  
-  a:hover {
-	text-decoration: underline;
-  }
-  
-  
-  
-  
-  blockquote {
-	  margin: 0;
-	  padding: 0;
-  }
-  
-  a {
-	  text-decoration: none;
-  }
-  
+ul {
+    list-style: none;
+    padding: 20px;
+    border: 2px solid black;
+    width: 300px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px; /* Abstand zwischen Liste und Überschrift */
+}
 
-  
+ul li {
+    margin: 10px 0;
+}
+
+footer {
+    margin-top: 40px; /* Abstand zwischen Liste und Footer */
+}
+
+
