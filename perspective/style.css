@@ -8,7 +8,7 @@ body {
     text-align: center;
 }
 
-/* Header */
+
 header {
     margin-top: 20px;
 }
@@ -61,7 +61,7 @@ p {
     text-align: justify;
 }
 
-/* Bilder-Galerie */
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -71,7 +71,7 @@ p {
 }
 
 .gallery img {
-    width: 30%; /* Passt 3 Bilder pro Reihe an */
+    width: 60%; 
     max-width: 300px;
     height: auto;
     border-radius: 5px;
@@ -86,7 +86,6 @@ p {
 
 
 
-/* Footer */
 footer {
     margin-top: 50px;
     font-size: 0.9em;
