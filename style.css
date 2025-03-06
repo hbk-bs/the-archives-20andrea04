@@ -1,29 +1,71 @@
+/* Allgemeine Stile */
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Zentriert die Elemente horizontal */
-    justify-content: center; /* Zentriert die Inhalte vertikal */
-    min-height: 100vh; /* Nimmt die volle Höhe des Bildschirms */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
-    text-align: center; /* Zentriert den Text */
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    text-align: center;
 }
 
+/* Header */
+header {
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #555;
+}
+
+/* Navigationslinks */
 ul {
     list-style: none;
-    padding: 20px;
-    border: 2px solid black;
-    width: 300px;
-    font-size: 20px;
-    text-align: center;
-    margin-top: 20px; /* Abstand zwischen Liste und Überschrift */
+    padding: 0;
 }
 
 ul li {
-    margin: 10px 0;
+    display: inline;
+    margin: 10px;
 }
 
+ul li a {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+ul li a:hover {
+    color: darkblue;
+}
+
+/* Box um die Links */
+.box {
+    border: 2px solid #000;
+    display: inline-block;
+    padding: 15px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+/* Textbereich */
+p {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: justify;
+}
+
+/* Footer */
 footer {
-    margin-top: 40px; /* Abstand zwischen Liste und Footer */
+    margin-top: 50px;
+    font-size: 0.9em;
+    color: #777;
 }
-
 
