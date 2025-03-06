@@ -1,4 +1,4 @@
-/* Allgemeine Stile */
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -9,7 +9,6 @@ body {
     text-align: center;
 }
 
-/* Header */
 header {
     margin-top: 20px;
 }
@@ -55,14 +54,14 @@ ul li a:hover {
     margin-top: 20px;
 }
 
-/* Textbereich */
+
 p {
     max-width: 800px;
     margin: 20px auto;
     text-align: justify;
 }
 
-/* Bilder-Galerie */
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -72,7 +71,7 @@ p {
 }
 
 .gallery img {
-    width: 30%; /* Passt 3 Bilder pro Reihe an */
+    width: 30%; 
     max-width: 300px;
     height: auto;
     border-radius: 5px;
@@ -81,8 +80,6 @@ p {
 }
 
 
-
-/* Footer */
 footer {
     margin-top: 50px;
     font-size: 0.9em;
