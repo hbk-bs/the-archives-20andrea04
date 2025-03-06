@@ -1,13 +1,71 @@
+/* Allgemeine Stile */
 body {
-	height: 100dvh;
-	width: 100dvw;
-	margin: 0 auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    text-align: center;
 }
 
-img {
-	max-width: 100%;
-	height: auto;
+/* Header */
+header {
+    margin-top: 20px;
 }
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #555;
+}
+
+/* Navigationslinks */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    display: inline;
+    margin: 10px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+ul li a:hover {
+    color: darkblue;
+}
+
+/* Box um die Links */
+.box {
+    border: 2px solid #000;
+    display: inline-block;
+    padding: 15px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+/* Textbereich */
+p {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: justify;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    font-size: 0.9em;
+    color: #777;
+}
+
