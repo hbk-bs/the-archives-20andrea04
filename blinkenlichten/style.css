@@ -3,12 +3,12 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
-    color: #333;
+    background-color: black;
+    color: white;
     text-align: center;
 }
 
-/* Header */
+
 header {
     margin-top: 20px;
 }
@@ -23,7 +23,7 @@ h2 {
     color: #555;
 }
 
-/* Navigationslinks */
+/* links */
 ul {
     list-style: none;
     padding: 0;
@@ -54,14 +54,14 @@ ul li a:hover {
     margin-top: 20px;
 }
 
-/* Textbereich */
+
 p {
     max-width: 800px;
     margin: 20px auto;
     text-align: justify;
 }
 
-/* Bilder-Galerie */
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -71,7 +71,7 @@ p {
 }
 
 .gallery img {
-    width: 30%; /* Passt 3 Bilder pro Reihe an */
+    width: 30%; /*  3 Bilder pro Reihe  */
     max-width: 300px;
     height: auto;
     border-radius: 5px;
@@ -80,7 +80,7 @@ p {
 }
 
 .gallery video {
-    width: 30%; /* Passt 3 Videos pro Reihe an */
+    width: 30%; /* 3 Videos pro Reihe */
     max-width: 300px;
     height: auto;
     border-radius: 5px;
@@ -94,5 +94,5 @@ p {
 footer {
     margin-top: 50px;
     font-size: 0.9em;
-    color: #777;
+    color: white;
 }
