@@ -1,16 +1,16 @@
-// Anzahl der Reihen und Spalten
+// Reihen und Spalten
 let rows = 10;
 let cols = 10;
 let grid = [];
 let cellSize = 50;
 
-// Setup für das p5.js Canvas
+//  Canvas
 function setup() {
   let canvas = createCanvas(cols * cellSize, rows * cellSize);
   canvas.parent("p5-container");
   noStroke();
 
-  // Initialisiere das Grid mit zufälligen Dreiecken oder weißen Zellen
+  // Initialisiert Grid mit zufälligen Dreiecken oder weißen Zellen
   for (let y = 0; y < rows; y++) {
     let row = [];
     for (let x = 0; x < cols; x++) {
@@ -26,7 +26,7 @@ function setup() {
   }
 }
 
-// Zeichne das Raster
+// Zeichnet Raster
 function draw() {
   background(255);
 
